@@ -1,6 +1,6 @@
-# zipF <- "exdata_data_household_power_consumption.zip"
-# outDir <- "powerConsumption"
-# unzip(zipfile = zipF, exdir = outDir)
+zipF <- "exdata_data_household_power_consumption.zip"
+outDir <- "powerConsumption"
+unzip(zipfile = zipF, exdir = outDir)
 
 powerConsumption <- read.table("powerConsumption/household_power_consumption.txt", header = TRUE, sep = ";", na.strings = "?", stringsAsFactors = FALSE)
 powerConsumption$Date <- as.Date(powerConsumption$Date, "%d/%m/%Y")
