@@ -16,12 +16,12 @@ globalActivePower <- powerConsumption$Global_active_power
 par(mfrow = c(2,2))
 png("plot4.png", width=480, height=480)
 with(powerConsumption, {
-  plot(datetime, Global_active_power, type = "l")
+  plot(datetime, Global_active_power, type = "l", ylab = "Global Active Power(kilowatts)")
   plot(datetime, Voltage, type = "l", xlab = "")
-  plot(datetime, Sub_metering_1, ylab = "Global Active Power (kilowatts)",
+  plot(datetime, Sub_metering_1, ylab = "Energy sub metering",
        xlab = "", type = "l")
   lines(datetime, Sub_metering_2, col='Red')
   lines(datetime, Sub_metering_3, col='Blue')
-  plot(datetime, Global_reactive_power, type = "l", ylab = "Global Reactive Power (kilowatts)")
+  plot(datetime, Global_reactive_power, type = "l")
 })
 dev.off()
