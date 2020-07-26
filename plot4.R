@@ -1,6 +1,6 @@
-zipF <- "exdata_data_household_power_consumption.zip"
-outDir <- "powerConsumption"
-unzip(zipfile = zipF, exdir = outDir)
+# zipF <- "exdata_data_household_power_consumption.zip"
+# outDir <- "powerConsumption"
+# unzip(zipfile = zipF, exdir = outDir)
 
 powerConsumption <- read.table("powerConsumption/household_power_consumption.txt", header = TRUE, sep = ";", na.strings = "?", stringsAsFactors = FALSE)
 powerConsumption$Date <- as.Date(powerConsumption$Date, "%d/%m/%Y")
@@ -18,10 +18,10 @@ png("plot4.png", width=480, height=480)
 with(powerConsumption, {
   plot(datetime, Global_active_power, type = "l")
   plot(datetime, Voltage, type = "l", xlab = "")
-  plot(dateTime, Sub_metering_1, ylab = "Global Active Power (kilowatts)",
+  plot(datetime, Sub_metering_1, ylab = "Global Active Power (kilowatts)",
        xlab = "", type = "l")
-  lines(dateTime, Sub_metering_2, col='Red')
-  lines(dateTime, Sub_metering_3, col='Blue')
+  lines(datetime, Sub_metering_2, col='Red')
+  lines(datetime, Sub_metering_3, col='Blue')
   plot(datetime, Global_reactive_power, type = "l", ylab = "Global Reactive Power (kilowatts)")
 })
 dev.off()

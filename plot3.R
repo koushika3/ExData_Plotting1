@@ -16,7 +16,7 @@ globalActivePower <- powerConsumption$Global_active_power
 png("plot3.png", width=480, height=480)
 
 with(powerConsumption, {
-     plot(dateTime, Sub_metering_1, ylab = "Global Active Power (kilowatts)",
+     plot(dateTime, Sub_metering_1, ylab = "Energy sub metering",
                             xlab = "", type = "l")
      lines(dateTime, Sub_metering_2, col='Red')
      lines(dateTime, Sub_metering_3, col='Blue')
